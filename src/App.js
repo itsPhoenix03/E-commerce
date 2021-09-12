@@ -9,7 +9,7 @@ import './Styles/main.scss';
 
 function App() {
   return (
-    <div className="bg-black-02">
+    <div>
       <Switch>
         <Route path="/" exact>
           <Home />

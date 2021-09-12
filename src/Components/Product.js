@@ -1,14 +1,11 @@
 import React from 'react';
 import ShowProduct from './ShowProduct';
 import { FlexGrid } from './styled';
-import products from '../Database/products.json';
-import { getItems } from '../misc/helper';
 
-const Product = ({ id }) => {
-  const releventProducts = getItems(id, products);
+const Product = ({ products }) => {
   return (
     <FlexGrid className="mt-3">
-      {releventProducts.map(item => {
+      {products.map(item => {
         return (
           <ShowProduct
             key={item.id}

@@ -1,3 +1,5 @@
+import { useReducer } from 'react';
+
 export function getItems(id, products) {
   const items = [];
 
@@ -7,3 +9,22 @@ export function getItems(id, products) {
 
   return items;
 }
+
+const createFilterReducer = initialState => (action, state) => {
+  switch (action.type) {
+    case 'RESET':
+      return initialState;
+
+    case 'SET':
+      return { ...state, [action.filter]: action.value };
+
+    default:
+      return state;
+  }
+};
+
+export const useFilter = initialState => {
+  const filterReducer = createFilterReducer(initialState);
+
+  return useReducer(filterReducer, initialState);
+};
