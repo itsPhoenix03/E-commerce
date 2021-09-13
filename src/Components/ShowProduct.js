@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'rsuite';
 import { StyledShowProduct } from './ShowProduct.styled';
 
 const ShowProduct = ({ name, image, price, currency, delivery, inStock }) => {
@@ -20,7 +21,7 @@ const ShowProduct = ({ name, image, price, currency, delivery, inStock }) => {
           </h4>
 
           <div className="btns">
-            <button type="button">Add to Cart</button>
+            <Button type="button">Add to Cart</Button>
           </div>
         </>
       ) : (

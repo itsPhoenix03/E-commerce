@@ -11,6 +11,7 @@ const FilterNav = ({ id, name, checked, onChange, label }) => {
         checked={checked}
         onChange={onChange}
         label={label}
+        className="ml-3"
       />
     </div>
   );

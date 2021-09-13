@@ -16,7 +16,7 @@ const createFilterReducer = initialState => (action, state) => {
       return initialState;
 
     case 'SET':
-      return { ...state, [action.filter]: action.value };
+      return { ...state, [action.filterName]: action.value };
 
     default:
       return state;

@@ -14,7 +14,7 @@ function getFilteredItems(products, filter) {
 
   if (filter.delivery) result = result.filter(p => p.delivery === true);
 
-  if (filter.expensive) result = result.filter(p => p.expensive > 100);
+  if (filter.expensive) result = result.filter(p => p.price > 100);
 
   return result;
 }
