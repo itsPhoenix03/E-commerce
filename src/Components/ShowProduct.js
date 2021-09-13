@@ -62,7 +62,7 @@ const ShowProduct = ({ name, image, price, currency, delivery, inStock }) => {
                 </p>
               </>
             ) : (
-              <span className="text-red">Currently Out Of Stock</span>
+              <span className="text-red mt-3">Currently Out Of Stock</span>
             )}
           </span>
         </Modal.Body>
