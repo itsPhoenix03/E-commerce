@@ -5,7 +5,7 @@ import ProductItems from '../Database/products.json';
 import categories from '../Database/categories.json';
 import Product from '../Components/Product';
 import FilterNav from '../Components/FilterNav';
-import { useFilter } from '../misc/helper';
+import { useFilter } from '../misc/custom-hooks';
 
 function getFilteredItems(products, filter) {
   let result = [...products];
