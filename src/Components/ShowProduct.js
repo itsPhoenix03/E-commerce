@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Button, Modal } from 'rsuite';
+import { useCartDispatch } from '../misc/cart.context';
 import { useModalState } from '../misc/custom-hooks';
 import { StyledShowProduct } from './ShowProduct.styled';
 
-const ShowProduct = ({ name, image, price, currency, delivery, inStock }) => {
+const ShowProduct = ({
+  id,
+  name,
+  image,
+  price,
+  currency,
+  delivery,
+  inStock,
+}) => {
   const { isOpen, open, close } = useModalState();
+  const dispatchCart = useCartDispatch();
+
+  const addToCart = useCallback(
+    (productInStock, pid, productPrice) => {
+      if (!productInStock) return;
+
+      dispatchCart({ type: 'ADD_ONE', pid, productPrice });
+    },
+    [dispatchCart]
+  );
 
   return (
     <StyledShowProduct>
@@ -67,11 +86,15 @@ const ShowProduct = ({ name, image, price, currency, delivery, inStock }) => {
           </span>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={close} disabled={!inStock} color="green">
+          <Button
+            onClick={() => addToCart(inStock, id, price)}
+            disabled={!inStock}
+            color="green"
+          >
             Add to Cart
           </Button>
 
-          <Button onClick={close} color="cyan">
+          <Button onClick={() => addToCart(inStock, id, price)} color="cyan">
             Close
           </Button>
         </Modal.Footer>

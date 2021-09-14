@@ -118,6 +118,7 @@ $indent_3: 15px;
 .cursor-pointer {
   &:hover {
     cursor: pointer;
+    border: 1px solid cyan;
   }
 }
 
