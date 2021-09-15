@@ -6,10 +6,11 @@ import Home from './Pages/Home';
 import Categories from './Pages/Categories';
 import Checkout from './Pages/Checkout';
 import './Styles/main.scss';
+import { CartProvider } from './misc/cart.context';
 
 function App() {
   return (
-    <div>
+    <CartProvider>
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -23,7 +24,7 @@ function App() {
           <Checkout />
         </Route>
       </Switch>
-    </div>
+    </CartProvider>
   );
 }
 

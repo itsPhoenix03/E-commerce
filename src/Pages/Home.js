@@ -1,21 +1,12 @@
 import React from 'react';
-import { Button, Icon, Nav } from 'rsuite';
+import { Button } from 'rsuite';
 import categories from '../Database/categories.json';
+import Navbar from '../Components/Navigation/Navbar';
 
 const Home = () => {
   return (
     <>
-      <Nav appearance="tabs" style={{ height: '50px' }} justified>
-        <div className="mt-2 ml-3">
-          <Nav.Item icon={<Icon icon="home" />} href="/" />
-          <Nav.Item icon={<Icon icon="shopping-cart" />} href="/Checkout" />
-          <Nav.Item>
-            <span>
-              <u>Amount</u>: $ 00
-            </span>
-          </Nav.Item>
-        </div>
-      </Nav>
+      <Navbar />
       <div className="text-center">
         {categories.map(item => {
           return (

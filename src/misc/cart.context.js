@@ -9,19 +9,19 @@ function cartReducer(state, action) {
       const isInCart = state.some(item => item.id === action.id);
 
       return isInCart
-        ? isInCart.map(item =>
+        ? state.map(item =>
             item.id === action.id
               ? { ...item, quantity: item.quantity + 1 }
               : item
           )
-        : isInCart.concat({ id: action.id, quantity: 1, price: action.price });
+        : state.concat({ id: action.id, quantity: 1, price: action.price });
     }
 
     case 'REMOVE_ONE': {
       const isInCart = state.some(item => item.id === action.id);
 
       return isInCart
-        ? isInCart.map(item =>
+        ? state.map(item =>
             item.id === action.id
               ? {
                   ...item,

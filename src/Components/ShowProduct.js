@@ -46,7 +46,9 @@ const ShowProduct = ({
             <Button onClick={open} className="mr-3">
               Preview
             </Button>
-            <Button type="button">Add to Cart</Button>
+            <Button onClick={() => addToCart(inStock, id, price)} type="button">
+              Add to Cart
+            </Button>
           </div>
         </>
       ) : (
@@ -94,7 +96,7 @@ const ShowProduct = ({
             Add to Cart
           </Button>
 
-          <Button onClick={() => addToCart(inStock, id, price)} color="cyan">
+          <Button onClick={close} color="cyan">
             Close
           </Button>
         </Modal.Footer>

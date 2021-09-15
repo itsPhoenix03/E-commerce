@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { useParams } from 'react-router';
-import { Divider, Icon, Nav } from 'rsuite';
+import { Divider } from 'rsuite';
 import ProductItems from '../Database/products.json';
 import categories from '../Database/categories.json';
 import Product from '../Components/Product';
+import Navbar from '../Components/Navigation/Navbar';
 import FilterNav from '../Components/FilterNav';
 import { useFilter } from '../misc/custom-hooks';
 
@@ -51,17 +52,7 @@ const Categories = () => {
 
   return (
     <>
-      <Nav appearance="tabs" style={{ height: '50px' }} justified>
-        <div className="mt-2 ml-3">
-          <Nav.Item icon={<Icon icon="home" />} href="/" />
-          <Nav.Item icon={<Icon icon="shopping-cart" />} href="/Checkout" />
-          <Nav.Item>
-            <span>
-              <u>Amount</u>: $ 00
-            </span>
-          </Nav.Item>
-        </div>
-      </Nav>
+      <Navbar />
       <span className=" ml-3 mt-2 font-bolder">
         <u>FILTER</u>:
       </span>
