@@ -55,7 +55,10 @@ const Checkout = () => {
     <div>
       <Nav appearance="tabs" style={{ height: '50px' }} justified>
         <div className="mt-2 ml-3">
-          <Nav.Item icon={<Icon icon="home" />} href="/" />
+          <Nav.Item icon={<Icon icon="home" />} href="/">
+            {' '}
+            <b>Home</b>{' '}
+          </Nav.Item>
           <Nav.Item
             icon={<Icon icon="keyboard-o" />}
             href="/Categories/fgsa2142fa"
@@ -92,7 +95,6 @@ const Checkout = () => {
               </tr>
             </thead>
             <tbody>
-              <hr />
               {checkoutItems.map(el => (
                 <tr key={el.id} className="">
                   <td>

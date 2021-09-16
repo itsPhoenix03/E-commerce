@@ -20,7 +20,7 @@ const ShowProduct = ({
     (productInStock, pid, productPrice) => {
       if (!productInStock) return;
 
-      dispatchCart({ type: 'ADD_ONE', pid, productPrice });
+      dispatchCart({ type: 'ADD_ONE', id: pid, price: productPrice });
     },
     [dispatchCart]
   );
