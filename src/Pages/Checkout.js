@@ -56,8 +56,7 @@ const Checkout = () => {
       <Nav appearance="tabs" style={{ height: '50px' }} justified>
         <div className="mt-2 ml-3">
           <Nav.Item icon={<Icon icon="home" />} href="/">
-            {' '}
-            <b>Home</b>{' '}
+            <b>Home</b>
           </Nav.Item>
           <Nav.Item
             icon={<Icon icon="keyboard-o" />}
