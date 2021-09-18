@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Divider } from 'rsuite';
 import ProductItems from '../Database/products.json';
 import categories from '../Database/categories.json';
 import Product from '../Components/Product';
 import Navbar from '../Components/Navigation/Navbar';
-import FilterNav from '../Components/FilterNav';
+import FilterNav from '../Components/Navigation/FilterNav';
 import { useFilter } from '../misc/custom-hooks';
 
 function getFilteredItems(products, filter) {
@@ -20,10 +20,19 @@ function getFilteredItems(products, filter) {
   return result;
 }
 
+const findProductsOfCategoryId = id =>
+  ProductItems.filter(p => p.categoryId === id);
+
 const Categories = () => {
   const { id } = useParams();
+
   const category = categories.find(c => c.id === id);
-  const [products] = useState(ProductItems.filter(p => p.categoryId === id));
+  const categoryProducts = findProductsOfCategoryId(id);
+  const [products, setProducts] = useState(categoryProducts);
+
+  useEffect(() => {
+    if (category.id) setProducts(findProductsOfCategoryId(category.id));
+  }, [category]);
 
   const [filter, dispatchFilter] = useFilter({
     inStock: false,

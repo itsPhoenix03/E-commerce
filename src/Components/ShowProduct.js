@@ -21,8 +21,9 @@ const ShowProduct = ({
       if (!productInStock) return;
 
       dispatchCart({ type: 'ADD_ONE', id: pid, price: productPrice });
+      close();
     },
-    [dispatchCart]
+    [dispatchCart, close]
   );
 
   return (

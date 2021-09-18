@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, ButtonGroup, Table } from 'reactstrap';
 import { Icon, Nav } from 'rsuite';
 import PRODUCTS from '../Database/products.json';
@@ -55,20 +56,26 @@ const Checkout = () => {
     <div>
       <Nav appearance="tabs" style={{ height: '50px' }} justified>
         <div className="mt-2 ml-3">
-          <Nav.Item icon={<Icon icon="home" />} href="/">
-            <b>Home</b>
+          <Nav.Item icon={<Icon icon="home" />}>
+            <Link to="/" className="link-unstyled text-black">
+              <b>Home</b>
+            </Link>
           </Nav.Item>
-          <Nav.Item
-            icon={<Icon icon="keyboard-o" />}
-            href="/Categories/fgsa2142fa"
-          >
-            Keyboard
+          <Nav.Item icon={<Icon icon="keyboard-o" />}>
+            <Link
+              to="/Categories/fgsa2142fa"
+              className="link-unstyled text-black"
+            >
+              Keyboard
+            </Link>
           </Nav.Item>
-          <Nav.Item
-            icon={<Icon icon="headphones" />}
-            href="/Categories/xasgy42fa"
-          >
-            Headphone
+          <Nav.Item icon={<Icon icon="headphones" />}>
+            <Link
+              to="/Categories/xasgy42fa"
+              className="link-unstyled text-black"
+            >
+              Headphone
+            </Link>
           </Nav.Item>
         </div>
       </Nav>

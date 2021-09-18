@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'rsuite';
 import categories from '../Database/categories.json';
 import Navbar from '../Components/Navigation/Navbar';
@@ -11,14 +12,14 @@ const Home = () => {
         {categories.map(item => {
           return (
             <Button className="mt-page mr-3 ml-3 cursor-pointer">
-              <a
+              <Link
                 key={item.id}
                 className="text-center text-black link-unstyled font-bolder"
-                href={`/Categories/${item.id}`}
+                to={`/Categories/${item.id}`}
               >
                 <h5>{item.name}</h5>
                 <p>{item.description}</p>
-              </a>
+              </Link>
             </Button>
           );
         })}
