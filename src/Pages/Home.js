@@ -11,7 +11,7 @@ const Home = () => {
       <div className="text-center">
         {categories.map(item => {
           return (
-            <Button className="mt-page mr-3 ml-3 cursor-pointer">
+            <Button className="mt-page mr-3 ml-3">
               <Link
                 key={item.id}
                 className="text-center text-black link-unstyled font-bolder"
